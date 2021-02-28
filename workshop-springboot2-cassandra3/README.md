@@ -19,12 +19,8 @@ docker exec -it cassandra1 bash
 ```
 ### cqlsh
 ```
-cqlsh
-```
-```
 describe keyspaces
-```
-```
+
 CREATE KEYSPACE testdb WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
 
 use testdb;
@@ -115,7 +111,40 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 	}
 }
 ```
+StandardError
 
+```java
+public class StandardError implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	private Long timestamp;
+	private Integer status;
+	private String error;
+	private String message;
+	private String path;
+}
+```
+ResourceExceptionHandler
+```java
+@ControllerAdvice
+public class ResourceExceptionHandler {
+
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<StandardError> resourceNotFound(ResourceNotFoundException e, HttpServletRequest request) {
+		
+		HttpStatus status = HttpStatus.NOT_FOUND;
+		
+		StandardError error = new StandardError();
+		error.setError("Not found");
+		error.setMessage(e.getMessage());
+		error.setPath(request.getRequestURI());
+		error.setStatus(status.value());
+		error.setTimestamp(Instant.now());
+	
+		return ResponseEntity.status(status).body(error);
+	}
+}
+```
 Seed da base de dados
 ```java
 @Configuration
@@ -168,6 +197,10 @@ public class TestConfig {
 
 ## Recursos adicionais
 
+### Introdução NoSQL
+
+[![Image](https://img.youtube.com/vi/c6h5eR0TvfU/mqdefault.jpg "Vídeo no Youtube")](https://youtu.be/c6h5eR0TvfU)
+
 ### Documentação Cassandra
 
 https://cassandra.apache.org/doc/latest
@@ -184,7 +217,7 @@ https://www.youtube.com/watch?v=s1xc1HVsRk0&list=PLalrWAGybpB-L1PGA-NfFu2uiWHEsd
 
 https://github.com/rahul-ghadge/spring-boot-cassandra-crud
 
-### Localização dos volumes no Windows
+### Localização dos volumes Docker no Windows
 
 https://stackoverflow.com/questions/43181654/locating-data-volumes-in-docker-desktop-windows
 

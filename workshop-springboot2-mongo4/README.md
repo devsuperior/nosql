@@ -35,7 +35,7 @@ public class StandardError implements Serializable {
 	private String path;
 }
 ```
-
+ResourceExceptionHandler
 ```java
 @ControllerAdvice
 public class ResourceExceptionHandler {
@@ -126,11 +126,19 @@ Consulta detalhada
 
 ## Recursos adicionais
 
+### Introdução NoSQL
+
+[![Image](https://img.youtube.com/vi/c6h5eR0TvfU/mqdefault.jpg "Vídeo no Youtube")](https://youtu.be/c6h5eR0TvfU)
+
 ### Documentação MongoDB: query operators
 
 https://docs.mongodb.com/manual/reference/operator/query
 
-### Localização dos volumes no Windows
+### Documentação Spring Data MongoDB
+
+https://docs.spring.io/spring-data/mongodb/docs/current/reference/html
+
+### Localização dos volumes Docker no Windows
 
 https://stackoverflow.com/questions/43181654/locating-data-volumes-in-docker-desktop-windows
 
