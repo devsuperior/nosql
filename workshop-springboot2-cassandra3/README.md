@@ -43,7 +43,7 @@ SELECT * FROM post WHERE body LIKE '%MORNING%';
 ```
 ### Postman collection
 
-https://www.getpostman.com/collections/ef1c15a7c68c97d0226b
+https://www.getpostman.com/collections/63e680aa487c491140a3
 
 ### Trechos de código
 
