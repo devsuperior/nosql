@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "87828f28-9017-4c5b-97a2-f92b3f558fa4",
+		"name": "DSProducts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26170376",
+		"_collection_link": "https://dsprod.postman.co/workspace/Java-Spring-aulas~5cff5d40-2e9f-4aee-8ebe-ac37cfad24c3/collection/26170376-87828f28-9017-4c5b-97a2-f92b3f558fa4?action=share&source=collection_link&creator=26170376"
+	},
+	"item": [
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "All resources",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/departments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resource by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/departments/3d2364b0-896e-4e0e-9053-b671af739a9d",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"departments",
+								"3d2364b0-896e-4e0e-9053-b671af739a9d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New resource",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Celular\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/departments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update resource",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jogosss\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/departments/3d2364b0-896e-4e0e-9053-b671af739a9d",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"departments",
+								"3d2364b0-896e-4e0e-9053-b671af739a9d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete resource",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Maria Atualizada\",\r\n    \"email\": \"maria2@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/departments/10fc10cc-c6c8-467f-aad6-762fc9cf0f52",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"departments",
+								"10fc10cc-c6c8-467f-aad6-762fc9cf0f52"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Resource by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/a4b3e607-e373-47bf-a60e-d2fa6a1688bc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"a4b3e607-e373-47bf-a60e-d2fa6a1688bc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products by dept name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products?department=Computadores",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "department",
+									"value": "Computadores"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products by description",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/description?text=GRANDE%20AMEAÇA",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"description"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "GRANDE%20AMEAÇA"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
