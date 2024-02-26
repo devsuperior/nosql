@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "7c601d8d-5ca7-46f1-8496-a695c21296ff",
+		"name": "DSPosts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26170376",
+		"_collection_link": "https://dsprod.postman.co/workspace/Java-Spring-aulas~5cff5d40-2e9f-4aee-8ebe-ac37cfad24c3/collection/26170376-7c601d8d-5ca7-46f1-8496-a695c21296ff?action=share&source=collection_link&creator=26170376"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "All resources",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resource by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/65dca9e0d70be071fb754110",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"65dca9e0d70be071fb754110"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/65dca9e0d70be071fb754110/posts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"65dca9e0d70be071fb754110",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New resource",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ana Red\",\r\n    \"email\": \"ana@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update resource",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Maria Atualizada\",\r\n    \"email\": \"maria2@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/65dca9e0d70be071fb754110",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"65dca9e0d70be071fb754110"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete resource",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Maria Atualizada\",\r\n    \"email\": \"maria2@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/65dcb8e6d70be071fb754115",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"65dcb8e6d70be071fb754115"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Resource by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/posts/65dca9e1d70be071fb754113",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"65dca9e1d70be071fb754113"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Title search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/posts/titlesearch?text=bom%20dia",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"titlesearch"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "bom%20dia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Full search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/posts/fullsearch?text=bo&start=2021-02-01T03:00:00Z&end=2021-02-15T03:00:00Z",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"fullsearch"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "bo"
+								},
+								{
+									"key": "start",
+									"value": "2021-02-01T03:00:00Z"
+								},
+								{
+									"key": "end",
+									"value": "2021-02-15T03:00:00Z"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

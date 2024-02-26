@@ -18,7 +18,7 @@ docker exec -it mongo1 bash
 
 ### Postman collection
 
-https://www.getpostman.com/collections/2335420a92e700cc24fa
+(baixe o arquivo DSPosts.postman_collection.json que está aqui na pasta do projeto, e importe-o no seu Postman)
 
 ### Trechos de código
 
